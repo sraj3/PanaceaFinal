@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Panacea1</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_title">select service</string>
+    <string-array name="serviceName_array">
+        <item>select a service</item>
+        <item>Carpentry</item>
+        <item>Electrician</item>
+        <item>Gas</item>
+        <item>Mason </item>
+        <item>Mechanic</item>
+        <item>Painting</item>
+        <item>Plumbing</item>
+        <item>Welding</item>
+    </string-array>
+    <string-array name="serviceSubtype_Electricity">
+        <item>Carpentry</item>
+        <item>Electricity</item>
+        <item>Gas</item>
+        <item>Mason </item>
+        <item>Mechanic</item>
+        <item>Painting</item>
+        <item>Plumbing</item>
+        <item>Welding</item>
+    </string-array>
+    <string-array name="serviceSubtype_Plumbing">
+        <item>Carpentry</item>
+        <item>Electricity</item>
+        <item>Gas</item>
+        <item>Mason </item>
+        <item>Mechanic</item>
+        <item>Painting</item>
+        <item>Plumbing</item>
+        <item>Welding</item>
+    </string-array>
+</resources>

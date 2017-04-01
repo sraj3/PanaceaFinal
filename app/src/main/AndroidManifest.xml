@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sugandh.panacea1">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!--
+        AIzaSyCHSWWcPVzub0UfiKBjP9z61GgpecGIf-s
+        org-AIzaSyBT9lmHb3WwhPpDQ9u9zItwqkJm591lRPk
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCHSWWcPVzub0UfiKBjP9z61GgpecGIf-s" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".register"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".homeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".uspDetail"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".uspDetail2"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".usp_login"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".search"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".display_usp_list"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".UspHomeActivity"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".verifyFirst"
+            android:theme="@style/AppTheme2"></activity>
+    </application>
+
+</manifest>
