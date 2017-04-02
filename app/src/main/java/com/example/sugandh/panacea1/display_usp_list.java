@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class display_usp_list extends AppCompatActivity {
+public class display_usp_list extends AppCompatActivity  implements selectUspAdapter.customButtonListener{
         String json_string;
         JSONObject jsonObject;
         JSONArray jsonArray;
@@ -34,6 +34,7 @@ public class display_usp_list extends AppCompatActivity {
         setContentView(R.layout.activity_display_usp_list);
         listView= (ListView) findViewById(R.id.listview);
         uspAdapter=new selectUspAdapter(this,R.layout.usp_row_layout);
+        uspAdapter.setCustomButtonListner(this);
         listView.setAdapter(uspAdapter);
         json_string=getIntent().getExtras().getString("json_data");
 
@@ -135,4 +136,9 @@ public class display_usp_list extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onButtonClickListner(int position,selectUsp usp) {
+        Toast.makeText(display_usp_list.this, "Button click " + usp.getEmail(),
+                Toast.LENGTH_SHORT).show();
+    }
 }

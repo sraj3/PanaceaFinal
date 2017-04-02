@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class selectUspAdapter extends ArrayAdapter {
 
     @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View row;
         row=convertView;
         selectUspHolder UspHolder;
@@ -52,6 +53,7 @@ public class selectUspAdapter extends ArrayAdapter {
             UspHolder.tv_name= (TextView) row.findViewById(R.id.textView3);
             UspHolder.tv_email= (TextView) row.findViewById(R.id.textView4);
             UspHolder.tv_address= (TextView) row.findViewById(R.id.textView6);
+            UspHolder.button = (Button) row.findViewById(R.id.bt_selectUsp);
             row.setTag(UspHolder);
         }
         else
@@ -62,11 +64,33 @@ public class selectUspAdapter extends ArrayAdapter {
         UspHolder.tv_name.setText(Usp.getName());
         UspHolder.tv_email.setText(Usp.getEmail());
         UspHolder.tv_address.setText(Usp.getAddress());
+
+
+        final selectUsp temp = (selectUsp) getItem(position);
+        UspHolder.button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (customListner != null) {
+                    customListner.onButtonClickListner(position,temp);
+                }
+
+            }
+        });
         return row;
     }
     static  class selectUspHolder
     {
         TextView tv_name,tv_email,tv_address;
+        Button button;
+    }
+    customButtonListener customListner;
 
+    public interface customButtonListener {
+        public void onButtonClickListner(int position,selectUsp usp);
+    }
+
+    public void setCustomButtonListner(customButtonListener listener) {
+        this.customListner = listener;
     }
 }
