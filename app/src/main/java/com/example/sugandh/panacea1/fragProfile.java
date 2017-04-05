@@ -76,12 +76,6 @@ public class fragProfile extends Fragment {
                             +"      "+ et_city.getText().toString()+"      "+ et_state.getText().toString()
                             +"  "+ et_pincode.getText().toString();
                     pincode = et_pincode.getText().toString();
-
-//                    Intent i = new Intent(getContext(), uspDetail2.class);
-//                    i.putExtra("jsonData", jsonString);
-//                    i.putExtra("address", address);
-//                    i.putExtra("pincode", pincode);
-//                    startActivity(i);
                     new BackgroundTask().execute();
                 }
             }

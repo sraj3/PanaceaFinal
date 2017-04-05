@@ -112,6 +112,13 @@
                 android:layout_weight="0.36"
                 android:background="?android:attr/textColorLinkInverse" />
         </LinearLayout>
+
+        <Button
+            android:text="Logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button12"
+            android:onClick="logout"/>
     </LinearLayout>
     </RelativeLayout>
 

@@ -45,6 +45,7 @@ public class uspDetail extends AppCompatActivity {
             startActivity(i);
         }
     }
+
     public static boolean hasText(EditText editText) {
 
         String text = editText.getText().toString().trim();

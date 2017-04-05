@@ -23,11 +23,18 @@ public class homeActivity extends AppCompatActivity {
     String jsonString;
     String address;
     TextView textView;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        sessionManager =new SessionManager(getApplicationContext());
+
+        sessionManager.checkLogin();
+
+        Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show();
+
         jsonString=getIntent().getExtras().getString("jsonData");
 
             try {
@@ -76,15 +83,9 @@ public class homeActivity extends AppCompatActivity {
     }
 
 
-    public void findUsp(View view) {
+    public void findUsp(View view) {    }
 
-    }
-
-    public void submitUserDetail(View view) {
-
-
-
-    }
+    public void submitUserDetail(View view) {    }
 
     public void search(View view) {
 
@@ -93,83 +94,7 @@ public class homeActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-
-///*
-//
-//    class BackgroundTask extends AsyncTask<String,String,String>
-//    {
-//        String json_get_user_url;
-//        private ProgressDialog dialog = new ProgressDialog(homeActivity.this);
-//
-//        @Override
-//        protected void onPreExecute() {
-//            json_get_user_url="http://utilties.netai.net/login_user.php";
-//            this.dialog.setMessage("Please wait");
-//            this.dialog.show();
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... params) {
-//            try {
-//                URL url=new URL(json_get_user_url);
-//                HttpURLConnection httpURLConnection=(HttpURLConnection) url.openConnection();
-//                httpURLConnection.setRequestMethod("POST");
-//                httpURLConnection.setDoOutput(true);
-//                OutputStream outputStream=httpURLConnection.getOutputStream();
-//                BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-//                String data_string= URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"+
-//                        URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&";
-//                bufferedWriter.write(data_string);
-//                bufferedWriter.flush();
-//                bufferedWriter.close();
-//
-//
-//
-//                InputStream inputStream= httpURLConnection.getInputStream();
-//                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
-//                StringBuilder stringBuilder=new StringBuilder();
-//                while((json_string=bufferedReader.readLine())!=null)
-//                {
-//                    stringBuilder.append(json_string+"\n");
-//                }
-//
-//                bufferedReader.close();
-//                inputStream.close();
-//                httpURLConnection.disconnect();
-//                return stringBuilder.toString().trim();
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return "Error Occured";
-//        }
-//        @Override
-//        protected void onProgressUpdate(String... values) {
-//            super.onProgressUpdate(values);
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            if (dialog.isShowing()) {
-//                dialog.dismiss();
-//            }
-//            try {
-//                JSONObject jObj = new JSONObject(String.valueOf(result));
-//                boolean error = jObj.getBoolean("error");
-//
-//                if (!error) {
-//                    Intent i=new Intent(MainActivity.this,homeActivity.class);
-//                    i.putExtra("jsonData",result);
-//                    startActivity(i);
-//                }
-//                else {
-//                    Toast.makeText(getApplicationContext(),result, Toast.LENGTH_SHORT).show();
-//                }
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }*/
+    public void logout(View view) {
+        sessionManager.logoutUser();
+    }
 }

@@ -44,6 +44,14 @@ public class register extends AppCompatActivity implements AsyncRequest.OnAsyncR
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        et_name=(EditText)findViewById(R.id.et_uname);
+        et_email=(EditText)findViewById(R.id.et_uemail);
+        et_mobile=(EditText)findViewById(R.id.et_umobile);
+        et_password=(EditText)findViewById(R.id.et_upassword);
+        et_confirmPass=(EditText)findViewById(R.id.et_confirmPass);
+        radioGroup= (RadioGroup) findViewById(R.id.rGroup);
+
+        //check internet available
         b1=(Button)findViewById(R.id.submit);
         t1=(TextView) findViewById(R.id.message);
 
@@ -61,12 +69,6 @@ public class register extends AppCompatActivity implements AsyncRequest.OnAsyncR
     }
 
     public void add_user(View view) throws UnsupportedEncodingException {
-        et_name=(EditText)findViewById(R.id.et_uname);
-        et_email=(EditText)findViewById(R.id.et_uemail);
-        et_mobile=(EditText)findViewById(R.id.et_umobile);
-        et_password=(EditText)findViewById(R.id.et_upassword);
-        et_confirmPass=(EditText)findViewById(R.id.et_confirmPass);
-        radioGroup= (RadioGroup) findViewById(R.id.rGroup);
 
         name=et_name.getText().toString();
         email=et_email.getText().toString();

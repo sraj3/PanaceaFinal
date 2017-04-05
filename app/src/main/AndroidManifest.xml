@@ -39,7 +39,7 @@
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".homeActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".uspDetail"
             android:theme="@style/AppTheme2" />
