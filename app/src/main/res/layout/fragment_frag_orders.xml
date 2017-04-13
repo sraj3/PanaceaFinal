@@ -2,131 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenOrientation="portrait"
-    tools:context="com.example.sugandh.panacea1.fragOrders">
+    android:fillViewport="true"
+    tools:context="com.example.sugandh.panacea1.user.fragOrders">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
+        android:id="@+id/orders"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
 
-        <LinearLayout
+
+        <TextView
+            android:text="Your Recent orders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:text="Save your address first"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:id="@+id/tvPlaceAddress"
-                android:layout_alignParentStart="true"
-                android:textSize="24sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvPlaceName"
-                android:layout_below="@+id/tvPlaceName"
-                android:layout_alignStart="@+id/tvPlaceName" />
-
-            <Button
-                android:text="Get address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btGetPlace"
-                android:layout_below="@+id/linearLayout"
-                android:layout_centerHorizontal="true" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1"
+            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="199dp">
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/spinner"
-                android:layout_centerHorizontal="true"
-                android:spinnerMode="dropdown"
-                android:entries="@array/serviceName_array"
-                android:prompt="@string/spinner_title"
-                />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinner01"
-                android:layout_weight="0.11" />
-
-            <TextView
-                android:text="Your Address:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView8"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="Enter your address first"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/textView5"
-                android:textSize="24sp"
-                android:fontFamily="sans-serif-smallcaps" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:ems="10"
-                    android:id="@+id/editText6"
-                    android:layout_width="150dp"
-                    android:hint="select date" />
-
-                <Button
-                    android:text="select"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/editText6"
-                    android:layout_marginStart="19dp"
-                    android:id="@+id/button17" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="time"
-                    android:ems="10"
-                    android:id="@+id/editText7"
-                    android:hint="select time" />
-
-                <Button
-                    android:text="select"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button19"
-                    android:layout_marginStart="18dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/editText7" />
-
-            </RelativeLayout>
-            <Button
-                android:text="Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button091"
-                android:onClick="findUsp"/>
-        </LinearLayout>
+            android:id="@+id/textView10"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:background="@drawable/border" />
 
         <Button
             android:text="Request a service"
@@ -134,9 +30,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/button11"
             android:onClick="search"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="127dp" />
+            android:layout_alignParentBottom="true"
+            />
+
 
     </RelativeLayout>
 </ScrollView>

@@ -4,6 +4,7 @@ package com.example.sugandh.panacea1;
  * Created by sugandh on 3/24/2017.
  */
 
+import android.app.Fragment;
 import android.os.AsyncTask;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -47,6 +48,15 @@ public class AsyncRequest extends AsyncTask<String, Integer, String> {
         caller = (OnAsyncRequestComplete) a;
         context = a;
         }
+
+
+    public AsyncRequest(android.support.v4.app.Fragment frag, String m, String p) {
+
+        caller = (OnAsyncRequestComplete) frag;
+        context = frag.getContext();
+        method = m;
+        parameters = p;
+    }
 
     // Interface to be implemented by calling activity
         public interface OnAsyncRequestComplete {

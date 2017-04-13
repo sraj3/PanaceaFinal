@@ -5,12 +5,30 @@ package com.example.sugandh.panacea1;
  */
 
 public class User {
+    int id;
     String name;
-    String username;
-    String password;
     String mobile;
     String address;
     String pincode;
+
+    static String email;
+
+
+    public User(int id, String name, String mobile, String address, String pincode) {
+        this.id = id;
+        this.name = name;
+        this.mobile = mobile;
+        this.address = address;
+        this.pincode = pincode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public static String getEmail() {
         return email;
@@ -18,15 +36,6 @@ public class User {
 
     public static void setEmail(String email) {
         User.email = email;
-    }
-
-    static String email;
-
-    public User(String name, String username, String password, String mobile) {
-        this.name = name;
-        this.username = username;
-        this.password = password;
-        this.mobile = mobile;
     }
 
     public String getPincode() {
@@ -51,22 +60,6 @@ public class User {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getName() {

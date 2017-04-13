@@ -5,6 +5,7 @@ package com.example.sugandh.panacea1;
  */
 
 public class selectUsp {
+    int id;
     String name;
     String email;
     String password;
@@ -14,17 +15,26 @@ public class selectUsp {
     String experience;
     String mobile;
 
-    public String getName() {
-        return name;
-    }
-
-    public selectUsp(String name, String email, String address, String service, String pincode,String mobile) {
+    public selectUsp(int id,String name, String email, String address, String service, String pincode,String mobile) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.service = service;
         this.pincode = pincode;
         this.mobile = mobile;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {

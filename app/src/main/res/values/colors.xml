@@ -82,7 +82,7 @@
     <color name="LightSteelBlue">#B0C4DE</color>
     <color name="PaleTurquoise">#AFEEEE</color>
     <color name="GreenYellow">#ADFF2F</color>
-    <color name="LightBlue">#ADD8E6</color>
+    <color name="LightBlue">#0a83ab</color>
     <color name="DarkGray">#A9A9A9</color>
     <color name="Brown">#A52A2A</color>
     <color name="Sienna">#A0522D</color>
@@ -161,4 +161,5 @@
     <color name="sysTransparent">#00000000</color>
     <color name="sysWhite">#FFFFFFFF</color>
     <color name="sysYellow">#FFFFFF00</color>
+    <color name="button">#ffd9f4</color>
 </resources>

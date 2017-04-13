@@ -1,11 +1,14 @@
 package com.example.sugandh.panacea1;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.sugandh.panacea1.user.homeActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
     String username,password;
     String json_string;
     SessionManager sessionManager;
+    boolean doubleBackToExitPressedOnce=false;
+    private UserDbHelper userDbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
         Toast.makeText(this,"Login Status"+sessionManager.isLoggedIn(),Toast.LENGTH_SHORT).show();;
 
 
+        getApplicationContext().deleteDatabase("Panacea");
         et_username=(EditText)findViewById(R.id.et_username01);
         et_password=(EditText)findViewById(R.id.et_password01);
 
@@ -97,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
         startActivity(new Intent(MainActivity.this,register.class));
     }
 
+    public void forgot_password(View view) {
+
+    }
 
 
     private void executeBackgroundTask() throws UnsupportedEncodingException {
@@ -105,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
          URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&";
 
         String url;
-        url="http://utilties.netai.net/login_user.php";
+        url="http://apppanacea.000webhostapp.com/login_user.php";
         AsyncRequest asyncRequest=new AsyncRequest(this,"POST",data_string);
         asyncRequest.execute(url);
     }
@@ -116,13 +125,13 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
                 JSONObject jObj = new JSONObject(String.valueOf(result));
                 boolean error = jObj.getBoolean("error");
                 if (!error) {
-                    String id = jObj.getString("id");
+
+                    int id=jObj.getInt("id");
                     String name = jObj.getString("name");
                     String email = jObj.getString("email");
-//                  String id=Integer.valueOf(jObj.getInt("id")).toString();
                     User.setEmail(email);
-//                    String password = jObj.getString("password");
-//                    String mobile = jObj.getString("mobile");
+                    String mobile = jObj.getString("mobile");
+                    User user;
 
                     Boolean detailed = jObj.getBoolean("detailed");
                     int verified = jObj.getInt("verified");
@@ -130,14 +139,20 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
                     if(detailed) {
                         String address= jObj.getString("address");
                         String pincode = jObj.getString("pincode");
+                        user=new User(id,name,mobile,address,pincode);
                     }
-
-//                    User user=new User(name,username,password,mobile);
+                    else {
+                        user=new User(id,name,mobile,null,null);
+                    }
                     if(verified==1) {
-
                         sessionManager.createLoginSession(id, email);
+                        userDbHelper=new UserDbHelper(this);
+
+                        String message=userDbHelper.add_user(user);
+                        Toast.makeText(getApplicationContext(),message, Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(MainActivity.this, homeActivity.class);
                         i.putExtra("jsonData", result);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
                     }
                     else
@@ -153,6 +168,23 @@ public class MainActivity extends AppCompatActivity implements AsyncRequest.OnAs
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce=true;
+        Toast.makeText(getApplicationContext(),"Press again to exit",Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 6000);
+
     }
 
 }

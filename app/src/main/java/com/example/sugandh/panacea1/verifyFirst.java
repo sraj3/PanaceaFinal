@@ -26,7 +26,7 @@ public class verifyFirst extends AppCompatActivity implements AsyncRequest.OnAsy
 
         String data_string= URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(User.getEmail(),"UTF-8");
 
-        String url="http://utilties.netai.net/resendConfirmation.php";
+        String url="http://apppanacea.000webhostapp.com/resendConfirmation.php";
         AsyncRequest asyncRequest=new AsyncRequest(this,"POST",data_string);
         asyncRequest.execute(url);
 

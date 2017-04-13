@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.sugandh.panacea1.uspDetail"
+    tools:context="com.example.sugandh.panacea1.usp.uspDetail"
     android:orientation="vertical">
 <LinearLayout
     android:layout_width="match_parent"

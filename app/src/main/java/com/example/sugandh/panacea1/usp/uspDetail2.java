@@ -1,4 +1,4 @@
-package com.example.sugandh.panacea1;
+package com.example.sugandh.panacea1.usp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.sugandh.panacea1.AsyncRequest;
+import com.example.sugandh.panacea1.R;
+import com.example.sugandh.panacea1.user.homeActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,7 +28,7 @@ public class uspDetail2 extends AppCompatActivity implements AsyncRequest.OnAsyn
     Spinner s1,s2;
     Button button;
     String jsonString,json_string;
-    String username,password;
+    String username;
 
     String address,pincode;
     String title,service,experience,qualification,desc;
@@ -42,7 +46,6 @@ public class uspDetail2 extends AppCompatActivity implements AsyncRequest.OnAsyn
             if (!error) {
                 String name = jObj.getString("name");
                 username = jObj.getString("email");
-                password = jObj.getString("password");
                 setTitle(name);
                 Toast.makeText(getApplicationContext(),"Hello "+name, Toast.LENGTH_SHORT).show();
 
@@ -169,22 +172,21 @@ public class uspDetail2 extends AppCompatActivity implements AsyncRequest.OnAsyn
     private void executeBackgroundTask() throws UnsupportedEncodingException {
         String data_string=
                 URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"+
-                URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"+
                 URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(address,"UTF-8")+"&"+
                 URLEncoder.encode("pincode","UTF-8")+"="+URLEncoder.encode(pincode,"UTF-8")+"&"+
                 URLEncoder.encode("service","UTF-8")+"="+URLEncoder.encode(service,"UTF-8")+"&"+
                 URLEncoder.encode("title","UTF-8")+"="+URLEncoder.encode(title,"UTF-8")+"&"+
                 URLEncoder.encode("qualification","UTF-8")+"="+URLEncoder.encode(qualification,"UTF-8")+"&"+
                 URLEncoder.encode("experience","UTF-8")+"="+URLEncoder.encode(experience,"UTF-8")+"&"+
-                URLEncoder.encode("desc","UTF-8")+"="+URLEncoder.encode(desc,"UTF-8");
-        String url="http://utilties.netai.net/add_usp_detail.php";
+                URLEncoder.encode("description","UTF-8")+"="+URLEncoder.encode(desc,"UTF-8");
+        String url="http://apppanacea.000webhostapp.com/add_usp_detail.php";
         AsyncRequest asyncRequest=new AsyncRequest(this,"POST",data_string);
         asyncRequest.execute(url);
     }
 
     @Override
     public void asyncResponse(String result) {
-            Intent i=new Intent(uspDetail2.this,homeActivity.class);
+            Intent i=new Intent(uspDetail2.this,UspHomeActivity.class);
             i.putExtra("jsonData",result);
             startActivity(i);
     }

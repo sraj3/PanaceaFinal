@@ -1,7 +1,9 @@
-package com.example.sugandh.panacea1;
+package com.example.sugandh.panacea1.usp;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.sugandh.panacea1.R;
 
 public class UspHomeActivity extends Activity {
 

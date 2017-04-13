@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sugandh.panacea1.user.homeActivity;
+import com.example.sugandh.panacea1.usp.UspHomeActivity;
+import com.example.sugandh.panacea1.usp.uspDetail;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
@@ -40,8 +44,6 @@ public class usp_login extends AppCompatActivity implements AsyncRequest.OnAsync
 
         if(hasText(et_username) && hasText(et_password)) {
             if(isValidUname(et_username) && isValidPass(et_password))
-//                new BackgroundTask().execute();
-
             executeBackgroundTask();
         }
     }
@@ -89,7 +91,7 @@ public class usp_login extends AppCompatActivity implements AsyncRequest.OnAsync
                 URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&";
 
         String url;
-        url="http://utilties.netai.net/login_usp.php";
+        url="http://apppanacea.000webhostapp.com/login_usp.php";
         AsyncRequest asyncRequest=new AsyncRequest(this,"POST",data_string);
         asyncRequest.execute(url);
     }
@@ -109,10 +111,10 @@ public class usp_login extends AppCompatActivity implements AsyncRequest.OnAsync
                         startActivity(i);
                     } else
                     {
-                        String id = jObj.getString("id");
+                        int id = jObj.getInt("id");
                         String email = jObj.getString("email");
                         sessionManager.createLoginSession(id, email);
-                        Intent i = new Intent(usp_login.this, homeActivity.class);
+                        Intent i = new Intent(usp_login.this, UspHomeActivity.class);
                     i.putExtra("jsonData", result);
                     startActivity(i);
                     }

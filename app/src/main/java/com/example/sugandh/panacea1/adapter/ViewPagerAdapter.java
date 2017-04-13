@@ -1,4 +1,4 @@
-package com.example.sugandh.panacea1;
+package com.example.sugandh.panacea1.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

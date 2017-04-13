@@ -22,28 +22,28 @@
         android:layout_above="@+id/et_username01"
         android:layout_alignEnd="@+id/login" />
 
-
-    <TextView
-        android:text="Login as service provider"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_loginsp"
-        android:textSize="16sp"
-        android:onClick="login_sp"
-        android:layout_alignParentBottom="true"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/et_username01"
+        android:hint="email or mobile no:"
+        android:layout_above="@+id/et_password01"
+        android:layout_alignStart="@+id/et_password01"
+        android:layout_marginBottom="11dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/et_password01"
+        android:hint="enter password"
+        android:layout_above="@+id/login"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="73dp" />
+        android:layout_marginBottom="12dp" />
 
-    <TextView
-        android:text="Create new account here"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_create"
-        android:textSize="16sp"
-        android:onClick="register"
-        android:layout_alignBottom="@+id/tv_loginsp"
-        android:layout_alignStart="@+id/tv_loginsp"
-        android:layout_marginBottom="35dp" />
 
     <Button
         android:text="Login"
@@ -57,26 +57,37 @@
         android:layout_alignStart="@+id/tv_create"
         android:layout_marginStart="34dp" />
 
-    <EditText
+    <TextView
+        android:text="Create new account here"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/et_password01"
-        android:hint="enter password"
-        android:layout_above="@+id/login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp" />
+        android:id="@+id/tv_create"
+        android:textSize="16sp"
+        android:onClick="register"
+        android:layout_alignBottom="@+id/tv_loginsp"
+        android:layout_alignStart="@+id/tv_loginsp"
+        android:layout_marginBottom="35dp" />
 
-    <EditText
+    <TextView
+        android:text="Login as service provider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/et_username01"
-        android:hint="email or mobile no:"
-        android:layout_above="@+id/et_password01"
-        android:layout_alignStart="@+id/et_password01"
-        android:layout_marginBottom="11dp" />
+        android:id="@+id/tv_loginsp"
+        android:textSize="16sp"
+        android:onClick="login_sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp" />
+
+    <TextView
+        android:text="Forgot your password?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:onClick="forgot_password"
+        android:layout_marginBottom="17dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_above="@+id/tv_create"
+        android:layout_alignStart="@+id/tv_create" />
 
 </RelativeLayout>

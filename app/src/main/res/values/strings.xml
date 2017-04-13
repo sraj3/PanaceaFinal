@@ -4,35 +4,91 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="spinner_title">select service</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_help">Help</string>
+    <string name="action_search">Search</string>
+
     <string-array name="serviceName_array">
         <item>select a service</item>
-        <item>Carpentry</item>
+        <item>Carpenter</item>
         <item>Electrician</item>
         <item>Gas</item>
         <item>Mason </item>
         <item>Mechanic</item>
         <item>Painting</item>
-        <item>Plumbing</item>
-        <item>Welding</item>
+        <item>Plumber</item>
+        <item>Welder</item>
     </string-array>
-    <string-array name="serviceSubtype_Electricity">
-        <item>Carpentry</item>
-        <item>Electricity</item>
-        <item>Gas</item>
-        <item>Mason </item>
-        <item>Mechanic</item>
-        <item>Painting</item>
-        <item>Plumbing</item>
-        <item>Welding</item>
+    <string-array name="Subtype_Electrician">
+        <item>General Electric work</item>
+        <item>Lamp and Light fitting</item>
+        <item>Inverter Maintenance</item>
+        <item>Fan or Cooler Repair </item>
+        <item>Ac Repair</item>
+        <item>Geyser Repair</item>
+        <item>Washing Machine Repair</item>
+        <item>Reinstall Electrical Wiring </item>
+        <item>MCB and Fuse Repair</item>
+        <item>TV Repair</item>
+        <item>Refrigerator Repair</item>
+        <item>Other</item>
     </string-array>
-    <string-array name="serviceSubtype_Plumbing">
-        <item>Carpentry</item>
-        <item>Electricity</item>
-        <item>Gas</item>
-        <item>Mason </item>
-        <item>Mechanic</item>
-        <item>Painting</item>
-        <item>Plumbing</item>
-        <item>Welding</item>
+
+    <string-array name="Subtype_Plumber">
+        <item>General Plumbing work</item>
+        <item>Water tank installation</item>
+        <item>Bathroom fitting</item>
+        <item>Kitchen or Bathroom sink clogging</item>
+        <item>Water pipe change</item>
+        <item>Other </item>
     </string-array>
+
+    <string-array name="Subtype_carpenter">
+        <item>General Carpenting work</item>
+        <item>Furniture Repair And Installation</item>
+        <item>Door or Window Repair</item>
+        <item>Lock Repair,Break or Install</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Subtype_Mason">
+        <item>General Mason work</item>
+        <item>Wall or pillar Construction</item>
+        <item>Tile Installation</item>
+        <item>Roof Construction</item>
+        <item>Other</item>
+
+    </string-array>
+    <string-array name="Subtype_Painter">
+        <item>Interior Painting</item>
+        <item>Exterior Painting</item>
+        <item>Furniture or wood polishing</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Subtype_Mechanic">
+        <item>Car Repair</item>
+        <item>2 Wheeler Repair</item>
+        <item>Oil change</item>
+        <item>Puncture and tire Repair</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Subtype_Tailor">
+        <item>Clothes Stiching</item>
+        <item>Traditional wear Tailoring</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Subtype_Cook">
+        <item>Monthly Contract basis</item>
+        <item>For Special Occasions</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="Subtype_Welder">
+        <item>General Welding Work</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

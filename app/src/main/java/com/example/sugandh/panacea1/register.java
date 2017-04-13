@@ -178,9 +178,9 @@ public class register extends AppCompatActivity implements AsyncRequest.OnAsyncR
 
         String add_info_url;
         if (user==1)
-            add_info_url="http://utilties.netai.net/add_user.php";
+            add_info_url="http://apppanacea.000webhostapp.com/add_user.php";
         else
-            add_info_url="http://utilties.netai.net/add_usp.php";
+            add_info_url="http://apppanacea.000webhostapp.com/add_usp.php";
         AsyncRequest asyncRequest=new AsyncRequest(this,"POST",data_string);
         asyncRequest.execute(add_info_url);
 
